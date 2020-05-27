@@ -1,0 +1,49 @@
+@mixin text {
+    .text {
+        color: $accent-text;
+    }
+
+    .text-large {
+        @include text-large;
+    }
+
+    .text-normal {
+        @include text-normal;
+    }
+
+    .text-small {
+        @include text-small;
+    }
+
+    .text-macro {
+        @include text-macro;
+    }
+
+    .text-disabled {
+        @include pattern-disabled;
+    }
+
+    .text-inverted {
+        color: $base;
+    }
+
+    .text-muted {
+        color: $muted;
+    }
+
+    @each $name, $_ in $palette {
+        .text-#{$name} {
+            color: get-color(4, $name);
+        }
+    }
+
+    @each $name, $_ in $o-font-weight {
+        .text-#{$name} {
+            font-weight: font-weight($name);
+        }
+    }
+
+    .text-no-wrap {
+        white-space: "nowrap";
+    }
+}

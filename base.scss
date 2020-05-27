@@ -1,0 +1,36 @@
+/**
+ * Obvious.
+ * Version 1.4.1
+ */
+
+// --- Dependencies ---
+@import 'vendors/normalize';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// --- Config ---
+@import 'config/config';
+// --- Global ---
+@import 'global';
+// --- Components ---
+@import 'components/accordion';
+@import 'components/alert';
+@import 'components/button';
+@import 'components/text';
+
+
+@mixin theme-builder{
+
+    // Global
+    @include global;
+
+    // Set up Typogrpahy
+    @include typography-basic;
+
+    // Components
+    @include accordion;
+    @include alert;
+    @include button;
+    @include text;
+}
+
+@include theme-builder;

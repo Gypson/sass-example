@@ -1,0 +1,3 @@
+@mixin transition-box {
+    transition: background $basic-transition-time, border $basic-transition-time, color $basic-transition-time;
+}

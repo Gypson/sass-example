@@ -1,0 +1,47 @@
+@import "ui";
+@import "basic";
+
+@mixin pattern-box {
+    border: $ui-border;
+    border-radius: $basic-border-radius;
+    box-shadow: $ui-box-shadow;
+}
+
+@mixin pattern-disabled {
+    cursor: normal;
+    opacity: $basic-disabled-opacity;
+}
+
+@mixin pattern-reset-button {
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    user-select: auto;
+    text-decoration: none;
+    font-size: inherit;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+@mixin pattern-theme-focus {
+    outline: none;
+    box-shadow: $accent-bg 0px 0px 0px 2px, $accent-outline 0px 0px 0px 3px, rgba($accent-bg, .5) 0px 0px 0px 4px;
+}
+
+@mixin pattern-button-small {
+    @include text-small;
+    padding: $basic-unit - $basic-border-width-thick $basic-unit * 1.5 - $basic-border-width-thick;
+}
+
+@mixin pattern-button-regular {
+    @include text-small;
+    padding: $basic-unit * 1.25 - $basic-border-width-thick $basic-unit * 1.5 - $basic-border-width-thick;
+}
+
+@mixin pattern-button-large {
+    @include text-small;
+    padding: $basic-unit * 1.5 - $basic-border-width-thick $basic-unit * 2 - $basic-border-width-thick;
+}

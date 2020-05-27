@@ -1,0 +1,28 @@
+// Color Palettes
+$palette: (
+  primary: (#EFFCF6, #C6F7E2, #8EEDC7, #65D6AD, #3EBD93, #27AB83, #199473, #147D64, #0C6B58, #014D40),
+  secondary: (#E6E6FF, #C4C6FF, #A2A5FC,#8888FC, #7069FA, #5D55FA, #4D3DF7, #3525E6, #1D0EBE, #0C008C),
+  neutral: (#F0F4F8, #D9E2EC, #BCCCDC, #9FB3C8, #829AB1, #627D98, #486581, #334E68, #243B53, #102A43),
+  danger: (#FFE3E3, #FFBDBD, #FF9B9B, #F86A6A, #EF4E4E, #E12D39, #CF1124, #AB091E, #8A041A, #610316),
+  info: (#E3F8FF, #B3ECFF, #81DEFD, #5ED0FA, #40C3F7, #2BB0ED, #1992D4, #127FBF, #0B69A3, #035388),
+  success: (#EFFCF6, #C6F7E2, #8EEDC7, #65D6AD, #3EBD93, #27AB83, #199473, #147D64, #0C6B58, #014D40),
+  warning: (#FFFBEA, #FFF3C4, #FCE588, #FADB5F, #F7C948, #F0B429, #DE911D, #CB6E17, #B44D12, #8D2B0B)  
+);
+
+@function get-color($tone, $color) {
+  $color: map-get($palette, $color);
+  @return nth($color, $tone);
+};
+
+$white: #FFFFFF;
+$black: get-color(10, neutral);
+$base: $white;
+$muted: get-color(4, neutral);
+
+$accent-bg: $white;
+$accent-bg-hover: get-color(2, neutral);
+$accent-bg-error: get-color(2, danger);
+$accent-border: get-color(2, neutral);
+$accent-text: get-color(2, neutral);
+$accent-outline: get-color(5, primary);
+

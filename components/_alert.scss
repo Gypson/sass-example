@@ -1,0 +1,49 @@
+@mixin alert-contianer {
+    @include pattern-box;
+    display: block;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+    padding: $basic-unit * 3;
+    word-break: break-word;
+        &:before {
+            content: '" "';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $basic-unit / 2;
+            height: 100%;
+        };
+};
+
+@mixin  alert-theme($color, $full: null) {
+    @if $full == null {
+        border-color: get-color(6, neutral);
+        background-color: $accent-text;
+        &:before {
+            background-color: get-color(4, $color);
+        }
+    } @else {
+        background-color:  get-color(4, $color);
+        color: $base, 
+    }
+}
+
+@mixin alert {
+    .alert {
+        @include alert-contianer()
+    }
+    .alert-status-icon {
+        padding-left: $basic-unit * 2.5;
+    }
+    @each $name, $_ in $palette {
+
+        .alert-#{$name} {
+            @include alert-theme($name);
+        }
+        
+        .alert-#{$name}-full {
+            @include alert-theme($name, true);
+        }
+    }
+}

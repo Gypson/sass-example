@@ -1,0 +1,10 @@
+$o-breakpoints: (
+    xsmall: 767px,
+    small: 980px,
+    medium: 1280px,
+    large: 1690px,
+) !default;
+
+@function breakpoints($value, $map: $o-breakpoints) {
+    @return map-get($map, $value);
+  }

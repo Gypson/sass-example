@@ -1,0 +1,7 @@
+@import "basic";
+@import "color";
+
+$ui-border: #{$basic-border-width} solid #{$accent-border};
+$ui-border-radius: $basic-border-radius;
+$ui-border-width-thick: $basic-border-width-thick;
+$ui-box-shadow: 0 #{$basic-box-shadow-h-offset * 2} #{$basic-box-shadow-v-offset * 4} #{rgba($basic-box-shadow-color, 0.12)};

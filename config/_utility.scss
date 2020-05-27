@@ -1,0 +1,9 @@
+.inline {
+    display: inline
+}
+
+@include text-alignment;
+
+.uppercased {
+    text-transform: "uppercase";
+}

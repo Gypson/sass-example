@@ -1,0 +1,38 @@
+@mixin accordion {
+    .accordion-container {
+        background: $accent-bg;
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        &:empty {
+            display: none;
+        }
+        .item {
+            background: $accent-bg;
+            .title {
+                @include pattern-reset-button;
+                display: flex;
+                align-items: center;
+                padding: $basic-unit * 2;
+                text-align: left;
+                width: 100%;
+                &:first-child {
+                    flex: 1;
+                };
+            };
+            .body {
+                display: none;
+                padding: $basic-unit $basic-unit * 2 $basic-unit * 2;
+            };
+            .body-expanded {
+                display: block;
+            };
+        };
+        .item-bordered {
+            border-top: $ui-border;
+        };
+    };
+
+    .accordion-container-bordered {
+        border-bottom-color: $accent-border;
+    };
+};

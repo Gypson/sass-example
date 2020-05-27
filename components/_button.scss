@@ -1,0 +1,82 @@
+@mixin button {
+    .button {
+        @include pattern-reset-button;
+        @include transition-box;
+        font-weight: font-weight(bold);
+        position: relative;
+        color: $base;
+        background-color: get-color(4, primary);
+        border: $ui-border-width-thick solid get-color(4, primary);
+        border-radius: $ui-border-radius;
+        text-align: center;
+            &::-moz-focus-inner {
+                border: 0;
+                padding: 0;
+                margin: 0;
+            };
+            &:not([disabled]):hover {
+                background-color:  get-color(5, primary);
+                border-color: get-color(5, primary);
+            }
+    }
+
+    @each $name, $_ in $palette {
+
+        .button-#{$name} {
+            background-color: get-color(4, $name);
+            border: $ui-border-width-thick solid get-color(4, $name);
+                &:not([disabled]):hover {
+                    background-color:  get-color(5, $name);
+                    border-color: get-color(5, $name);
+                }
+        }
+        
+    }
+
+    .button_inverted {
+        color: get-color(4, primary);
+        border: none;
+        background-color: $accent-bg;
+            &:not([disabled]):hover {
+                background-color:  $accent-bg-hover;
+            }
+    }
+
+    .button-block {
+        display: block;
+        width: "100%";
+        white-space: " norma";
+        overflow: "hidden"
+    }
+
+    .button-borderless {
+        border-color: transparent;
+            &:not([disabled]):hover {
+            border-color: $accent-bg-hover
+          }
+    }
+
+    .button_disabled {
+        @include pattern-disabled;
+    }
+
+    .button-loading {
+        cursor: default;
+    }
+
+    .button-small {
+        @include pattern-button-small;
+        min-width: 6 * $basic-unit;
+    }
+
+    .button-regular {
+        @include pattern-button-regular;
+        min-width: 6 * $basic-unit;
+    }
+
+    .button-large {
+        @include pattern-button-large;
+        min-width: 6 * $basic-unit;
+    }
+    
+}

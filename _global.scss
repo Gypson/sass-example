@@ -1,0 +1,56 @@
+@import 'config/config';
+
+// Global
+@mixin global {
+    @include normalize;
+
+    html {
+        box-sizing: border-box;
+        font-size: $basic-font-size;
+    }
+
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        @include text-normal;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    button {
+        &:focus {
+            @include pattern-themed-focus;
+        }
+        &:focus:not(:focus-visible) {
+             outline: none;
+        }
+    }
+
+    button,html input[type="button"],input[type="reset"],input[type="submit"] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+
+    a {
+        &:focus, &:focus:not(:focus-visible) {
+            outline: none;
+        }
+    }
+    
+    a, button, input, select, textarea {
+        color: inherit;
+        background-color: inherit;
+        font: inherit;
+    }
+
+    img {
+        display: inline-block;
+        vertical-align: middle;
+    }
+}
